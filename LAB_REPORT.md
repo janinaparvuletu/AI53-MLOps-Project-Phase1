@@ -83,3 +83,14 @@ Compared with Run A (learning rate 0.001), Run B achieved lower validation Macro
 | Validation Loss | 0.8328 | 0.8927 | 0.8362 |
 
 Run C achieved the highest validation Macro-F1 and accuracy. Compared with Run A, enabling data augmentation improved Macro-F1 by 0.0233. This supports the hypothesis that augmentation helps the model generalize better. Run C is the current best candidate for final evaluation.
+
+## M8 – Model Selection
+
+The selected model is Run C.
+
+- Selected Run ID: 185373d4ca7d4de8ba75b653cee240d7
+- Selection criterion: highest validation Macro-F1.
+- Validation Macro-F1: 0.6487
+- Validation Accuracy: 0.6617
+
+Run C was selected because it achieved the highest validation Macro-F1 among the three experiments. Data augmentation improved the model's validation performance compared with the baseline Run A.
