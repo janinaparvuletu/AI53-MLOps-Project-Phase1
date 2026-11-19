@@ -94,3 +94,13 @@ The selected model is Run C.
 - Validation Accuracy: 0.6617
 
 Run C was selected because it achieved the highest validation Macro-F1 among the three experiments. Data augmentation improved the model's validation performance compared with the baseline Run A.
+
+### Final Test Evaluation
+
+- Selected Run ID: 185373d4ca7d4de8ba75b653cee240d7
+- Test Accuracy: 0.640625
+- Test Macro-F1: 0.6366339869281047
+- Test images: 128
+- Training data identity: 8fa943ff6c17a3c874d2b152e9d7980602a5cd50c0d8156625bd00590a3d8c6c
+
+The selected Run C model achieved a test accuracy of 64.06% and a test Macro-F1 of 63.66%. Its test Macro-F1 is close to its validation Macro-F1 of 64.87%, indicating relatively consistent performance on the two datasets.
