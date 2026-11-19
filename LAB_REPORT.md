@@ -55,3 +55,10 @@ Compared with Run A (learning rate 0.001), Run B achieved lower validation Macro
 | Change | VALIDATE | PREPARE | TRAIN | EVALUATE |
 |---|---|---|---|---|
 | Change train.learning_rate from 0.001 to 0.0003 | REUSED | REUSED | RERUN | NOT RUN |
+
+### Run C – Data augmentation
+
+- Learning rate: 0.001
+- Augmentation: enabled
+- Prediction: enabling data augmentation may improve validation Macro-F1 by helping the model generalize better to image variations.
+- Only the augmentation setting is changed compared with Run A.

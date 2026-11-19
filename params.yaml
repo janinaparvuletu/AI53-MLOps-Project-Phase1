@@ -4,12 +4,12 @@ data:
 train:
   batch_size: 32
   epochs: 4
-  learning_rate: 0.0003
+  learning_rate: 0.001
   dropout: 0.30
   random_state: 42
 
 augmentation:
-  enabled: false
+  enabled: true
   horizontal_flip: 0.50
   rotation_degrees: 10
 
