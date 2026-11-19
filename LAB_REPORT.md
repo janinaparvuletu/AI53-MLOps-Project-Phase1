@@ -15,3 +15,27 @@
 | src/train.py | Training artifacts are not logged to MLflow. | Log curves, summary and provenance manifest. |
 | src/train.py | Final PyTorch model is not logged to the MLflow Model Registry. | Log the model with signature, input example and metadata. |
 
+
+## Milestone 6 – DVC recomputation predictions
+
+| Change | VALIDATE | PREPARE | TRAIN | EVALUATE |
+|---|---|---|---|---|
+| Change train.learning_rate | REUSED | REUSED | RERUN | REUSED |
+| Change data.image_size | REUSED | RERUN | RERUN | NEEDS UPDATE |
+| Edit src/validate_data.py; quality report stays the same | RERUN | REUSED | REUSED | REUSED |
+| Edit only README.md | REUSED | REUSED | REUSED | REUSED |
+
+### Engineering checkpoint 5
+
+Changing train.learning_rate reruns only TRAIN because it is the only stage that declares the train parameters as dependencies. EVALUATE keeps the same selected Run ID, so its inputs do not change.
+
+Changing data.image_size reruns PREPARE because it declares data.image_size and reads data/raw. TRAIN must rerun because it also declares data.image_size and uses the prepared training data. EVALUATE needs updated results because it declares data.image_size and uses the prepared test data.
+
+Editing src/validate_data.py reruns VALIDATE because the file is one of its dependencies. Even if the quality report remains identical, PREPARE does not depend on that report, so the other stages can reuse their outputs.
+
+### Milestone 6 – Model selection criteria
+
+- Primary validation metric: Macro-F1.
+- Tie-break rule: choose the Run with higher validation accuracy if Macro-F1 is equal.
+- Learning-rate prediction: reducing the learning rate from 0.001 to 0.0003 will produce smaller parameter updates and potentially slower, more gradual learning. With only four epochs, it may also result in slower convergence.
+
