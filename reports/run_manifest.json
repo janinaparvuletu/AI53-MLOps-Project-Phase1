@@ -1,12 +1,12 @@
 {
   "configuration": {
-    "augmentation_enabled": false,
+    "augmentation_enabled": true,
     "batch_size": 32,
     "dropout": 0.3,
     "epochs": 4,
     "horizontal_flip": 0.5,
     "image_size": 96,
-    "learning_rate": 0.0003,
+    "learning_rate": 0.001,
     "rotation_degrees": 10
   },
   "data": {
@@ -22,11 +22,11 @@
     "torchvision": "0.26.0+cpu"
   },
   "execution": {
-    "mlflow_run_id": "bf67f7864ffc4b428123a8e15d5699d3",
+    "mlflow_run_id": "185373d4ca7d4de8ba75b653cee240d7",
     "random_state": 42
   },
   "git": {
-    "commit_sha": "8f90349c3312aaba1919c01d4627412770491c7d",
+    "commit_sha": "217815071c8f01dbb45b64321d67b12306d0331a",
     "dirty": true
   },
   "settings": {

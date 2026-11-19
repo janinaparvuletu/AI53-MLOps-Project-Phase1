@@ -75,7 +75,7 @@ stages:
     params:
       params.yaml:
         augmentation:
-          enabled: false
+          enabled: true
           horizontal_flip: 0.5
           rotation_degrees: 10
         compute.device: auto
@@ -83,26 +83,26 @@ stages:
         train:
           batch_size: 32
           epochs: 4
-          learning_rate: 0.0003
+          learning_rate: 0.001
           dropout: 0.3
           random_state: 42
     outs:
     - path: models/model.pt
       hash: md5
-      md5: 8c1012e7f821c756ad33f77de416fa03
+      md5: e92246db64b40bbb97e0070d1602331f
       size: 98673
     - path: reports/run_manifest.json
       hash: md5
-      md5: 4a3729b92c3fab5d0334a147368e9b9b
-      size: 895
+      md5: c8ead862e47e994d8313a814c7bca622
+      size: 893
     - path: reports/train_summary.json
       hash: md5
-      md5: 6018565f5e56a722df451dd15b687ac1
+      md5: 0c444fd189a5e581b231f0ae7ebda82a
       size: 247
     - path: reports/training_curves.png
       hash: md5
-      md5: 2dd9215b0548168aaf79ce0446a2dbf6
-      size: 112560
+      md5: b4eafb40165aa96dbaaa4e6bb4e85c78
+      size: 101642
   validate:
     cmd: uv run --locked python -m src.validate_data
     deps:

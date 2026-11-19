@@ -62,3 +62,24 @@ Compared with Run A (learning rate 0.001), Run B achieved lower validation Macro
 - Augmentation: enabled
 - Prediction: enabling data augmentation may improve validation Macro-F1 by helping the model generalize better to image variations.
 - Only the augmentation setting is changed compared with Run A.
+
+### Run C – Data augmentation results
+
+- Run ID: 185373d4ca7d4de8ba75b653cee240d7
+- Learning rate: 0.001
+- Augmentation: enabled
+- Final validation Macro-F1: 0.6487
+- Final validation Accuracy: 0.6617
+- Final validation Loss: 0.8362
+
+### Comparison of the three runs
+
+| Metric | Run A | Run B | Run C |
+|---|---:|---:|---:|
+| Learning rate | 0.001 | 0.0003 | 0.001 |
+| Augmentation | OFF | OFF | ON |
+| Validation Macro-F1 | 0.6254 | 0.6091 | 0.6487 |
+| Validation Accuracy | 0.6391 | 0.6165 | 0.6617 |
+| Validation Loss | 0.8328 | 0.8927 | 0.8362 |
+
+Run C achieved the highest validation Macro-F1 and accuracy. Compared with Run A, enabling data augmentation improved Macro-F1 by 0.0233. This supports the hypothesis that augmentation helps the model generalize better. Run C is the current best candidate for final evaluation.
