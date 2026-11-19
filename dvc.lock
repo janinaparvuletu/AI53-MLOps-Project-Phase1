@@ -83,26 +83,26 @@ stages:
         train:
           batch_size: 32
           epochs: 4
-          learning_rate: 0.001
+          learning_rate: 0.0003
           dropout: 0.3
           random_state: 42
     outs:
     - path: models/model.pt
       hash: md5
-      md5: 8e1940d542fdc350907c50272558969a
+      md5: 8c1012e7f821c756ad33f77de416fa03
       size: 98673
     - path: reports/run_manifest.json
       hash: md5
-      md5: f240d7bb8ecc45fe9af70f808bebaa4f
-      size: 894
+      md5: 4a3729b92c3fab5d0334a147368e9b9b
+      size: 895
     - path: reports/train_summary.json
       hash: md5
-      md5: 8ac0d61496d3f6099d69bf2eb63461a9
+      md5: 6018565f5e56a722df451dd15b687ac1
       size: 247
     - path: reports/training_curves.png
       hash: md5
-      md5: 4954d7760312a01a65ec9052184c8986
-      size: 98347
+      md5: 2dd9215b0548168aaf79ce0446a2dbf6
+      size: 112560
   validate:
     cmd: uv run --locked python -m src.validate_data
     deps:

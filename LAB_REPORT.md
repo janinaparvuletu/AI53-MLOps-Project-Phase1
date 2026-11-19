@@ -39,3 +39,19 @@ Editing src/validate_data.py reruns VALIDATE because the file is one of its depe
 - Tie-break rule: choose the Run with higher validation accuracy if Macro-F1 is equal.
 - Learning-rate prediction: reducing the learning rate from 0.001 to 0.0003 will produce smaller parameter updates and potentially slower, more gradual learning. With only four epochs, it may also result in slower convergence.
 
+
+### Run B – Lower learning rate
+
+- Learning rate: 0.0003
+- Run ID: bf67f7864ffc4b428123a8e15d5699d3
+- Final validation Macro-F1: 0.6091
+- Final validation Accuracy: 0.6165
+- Final validation Loss: 0.8927
+
+Compared with Run A (learning rate 0.001), Run B achieved lower validation Macro-F1 and accuracy, and higher validation loss. Therefore, reducing the learning rate to 0.0003 did not improve performance within four epochs.
+
+#### DVC recomputation – Run B
+
+| Change | VALIDATE | PREPARE | TRAIN | EVALUATE |
+|---|---|---|---|---|
+| Change train.learning_rate from 0.001 to 0.0003 | REUSED | REUSED | RERUN | NOT RUN |
