@@ -1,0 +1,30 @@
+{
+  "splits": {
+    "test": {
+      "classes": {
+        "angular_leaf_spot": 43,
+        "bean_rust": 43,
+        "healthy": 42
+      },
+      "total_images": 128
+    },
+    "train": {
+      "classes": {
+        "angular_leaf_spot": 345,
+        "bean_rust": 348,
+        "healthy": 341
+      },
+      "total_images": 1034
+    },
+    "validation": {
+      "classes": {
+        "angular_leaf_spot": 44,
+        "bean_rust": 45,
+        "healthy": 44
+      },
+      "total_images": 133
+    }
+  },
+  "status": "PASS",
+  "total_images": 1295
+}
